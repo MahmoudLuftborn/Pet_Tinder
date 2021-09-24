@@ -26,7 +26,12 @@ namespace Pet_Tinder.Controllers
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
 
-        public async Task<IActionResult> Index(UserSearchParamters userSearchParamters)
+        public IActionResult Index( )
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> Search(UserSearchParamters userSearchParamters)
         {
             var username = User.Identity.Name;
             var user = await _userRepository.GetByUserNameAsync(username.ToUpper());
