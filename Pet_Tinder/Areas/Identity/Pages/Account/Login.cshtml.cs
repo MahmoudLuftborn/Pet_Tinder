@@ -11,7 +11,6 @@ using Pet_Tinder.Repositories.Interfaces;
 
 using System;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -31,8 +30,7 @@ namespace Strauss.Frontend.Areas.Identity.Pages.Account
 			ILogger<Login> logger,
 			IUserRepository userRepository,
 			SignInManager<User> signInManager,
-			UserManager<User> userManager
-		)
+			UserManager<User> userManager)
 		{
 			_logger = logger ?? throw new ArgumentNullException(nameof(logger));
 			_userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
