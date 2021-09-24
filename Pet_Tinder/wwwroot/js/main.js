@@ -22,7 +22,7 @@ $(document).ready(function() {
 		offset: '75%'
 	});
 
-	// Fancybox
+	 Fancybox
 	$('.work-box').fancybox();
 
 	// Flexslider

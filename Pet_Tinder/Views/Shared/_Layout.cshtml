@@ -25,7 +25,6 @@
 	</style>
 </head>
 <body>
-	<section class="banner" role="banner" style="background-image:none;">
 		<header id="header">
 			<div class="header-content clearfix" style=" padding: 20px 0; ">
 				<a class="logo" href="#"><img src="~/Picture1.jpg" alt=""></a>
@@ -43,10 +42,9 @@
 				<a href="#" class="nav-toggle">Menu<span></span></a>
 			</div><!-- header content -->
 		</header><!-- header -->
-	</section>
-		<div class="container" style="padding-top:100px;">
-			@RenderBody()
-		</div>
+	<div class="container">
+		@RenderBody()
+	</div>
 
 	<footer class="footer">
 		<div class="footer-top">
@@ -103,7 +101,7 @@
 	ga('create', 'UA-XXXX-X');
 	ga('send', 'pageview');
 	</script>
-	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	@*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/site.js" asp-append-version="true"></script>
 	@await RenderSectionAsync("Scripts", required: false)
