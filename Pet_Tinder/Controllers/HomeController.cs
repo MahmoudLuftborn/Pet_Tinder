@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
+using Pet_Tinder.Attributes;
 using Pet_Tinder.Models;
 using Pet_Tinder.Models.Domain.Enums;
 using Pet_Tinder.Models.DTO.Search;
@@ -50,25 +51,21 @@ namespace Pet_Tinder.Controllers
         public IActionResult Breed(PetType type)
         {
             var allBreeds = Enum.GetValues(typeof(Breed));
-            var breeds = new List<Breed>();
+            var breeds = new List<string>();
 
             foreach (var breed in allBreeds)
             {
-                var sdfdf = typeof(PetType)
-                     .GetMembers();
-
                 var breedPetType =
                   typeof(Breed)
                      .GetMember(breed.ToString())
-                     .Where(member => member.MemberType == MemberTypes.Field)
                      .FirstOrDefault()
-                     .GetCustomAttributes(typeof(PetType), false)
-                     .Cast<PetType>()
-                     .SingleOrDefault();
+                     .GetCustomAttributes(typeof(PetTypeAttribute), false)
+                     .Cast<PetTypeAttribute>()
+                     .SingleOrDefault().Type;
 
                 if (breedPetType == type)
                 {
-                    breeds.Add((Breed)breed);
+                    breeds.Add(breed.ToString());
                 }
             }
 
