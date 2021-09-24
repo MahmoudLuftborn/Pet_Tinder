@@ -128,7 +128,7 @@ namespace Strauss.Frontend.Areas.Identity.Pages.Account
 				return RedirectToPage("./Lockout");
 			}
 
-			ModelState.AddModelError(string.Empty, "Login_Error_Msg");
+			ModelState.AddModelError(string.Empty, "login error message");
 
 			return Page();
 		}

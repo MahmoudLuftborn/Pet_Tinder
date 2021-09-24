@@ -15,7 +15,7 @@ namespace Pet_Tinder.Extensions
 			services.AddSingleton<IMongoClient, MongoClient>(provider =>
 			{
 				var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
-				return new MongoClient(connectionString);
+				return new MongoClient("mongodb://localhost:27017/?maxPoolSize=500");
 			});
 
 
