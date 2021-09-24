@@ -57,11 +57,6 @@ namespace Pet_Tinder.Repositories
 				}
 			}
 
-			if (!string.IsNullOrWhiteSpace(paramters.StoreId))
-			{
-				filter &= Builders<User>.Filter.Eq(u => u.StoreId, paramters.StoreId);
-			}
-
 			if (!string.IsNullOrWhiteSpace(paramters.SortValue))
 			{
 				SortDefinition<User> sortDefinition;
