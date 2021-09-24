@@ -25,22 +25,19 @@ namespace Strauss.Frontend.Areas.Identity.Pages.Account
 		private readonly ILogger<Login> _logger;
 		private readonly IUserRepository _userRepository;
 		private readonly UserManager<User> _userManager;
-		private readonly IStringLocalizer _localizer;
 		private readonly SignInManager<User> _signInManager;
 
 		public Login(
 			ILogger<Login> logger,
 			IUserRepository userRepository,
 			SignInManager<User> signInManager,
-			UserManager<User> userManager,
-			IStringLocalizer stringLocalizer
+			UserManager<User> userManager
 		)
 		{
 			_logger = logger ?? throw new ArgumentNullException(nameof(logger));
 			_userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
 			_signInManager = signInManager ?? throw new ArgumentNullException(nameof(signInManager));
 			_userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
-			_localizer = stringLocalizer ?? throw new ArgumentNullException(nameof(stringLocalizer));
 		}
 
 		[BindProperty]
@@ -133,7 +130,7 @@ namespace Strauss.Frontend.Areas.Identity.Pages.Account
 				return RedirectToPage("./Lockout");
 			}
 
-			ModelState.AddModelError(string.Empty, _localizer["Login_Error_Msg"]);
+			ModelState.AddModelError(string.Empty, "login error message");
 
 			return Page();
 		}
