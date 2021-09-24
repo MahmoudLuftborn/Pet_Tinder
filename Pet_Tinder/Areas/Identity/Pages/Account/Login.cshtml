@@ -6,32 +6,37 @@
 	ViewData["Title"] = "Login";
 }
 
-<div class="row">
-	<div class="col-md-5 m-auto login">
-		<h1>@ViewData["Title"]</h1>
+<style>
+	.form-control {
+		border-radius: 50rem;
+		box-shadow: 1px 1px 1px 1px #555;
+	}
+
+	.btn {
+		margin: auto;
+		display: block;
+		width: 50%;
+		background: #555;
+		border-radius: 50rem;
+	}
+</style>
+
+<div class="row" style="margin-top:20px;">
+	<div class="col-md-5 m-auto login" style="float:none;margin:auto;">
+		<h2 class="text-center"  style="color:white;">@ViewData["Title"]</h2>
 		<section>
 			<form id="account" method="post">
 				<div asp-validation-summary="All" class="text-danger"></div>
 				<div class="form-group">
-					<label for="Input_UserName">Username_Or_Phonenumber</label>
-					<input asp-for="Input.UserName" class="form-control" />
+					<input asp-for="Input.UserName" placeholder="Email" class="form-control" />
 					<span asp-validation-for="Input.UserName" class="text-danger"></span>
 				</div>
 				<div class="form-group">
-					<label for="Input_Password">Password</label>
-					<input asp-for="Input.Password" class="form-control" />
+					<input asp-for="Input.Password" placeholder="Password" class="form-control" />
 					<span asp-validation-for="Input.Password" class="text-danger"></span>
 				</div>
 				<div class="form-group">
-					<div class="checkbox">
-						<input type="checkbox" value="1" id="Input_RememberMe" name="Input_RememberMe" />
-						<label for="Input_RememberMe">
-						</label>
-					</div>
-					<label for="Input_RememberMe">RememberMe</label>
-				</div>
-				<div class="form-group">
-					<button type="submit">Login</button>
+					<button type="submit" class="btn">Login</button>
 				</div>
 			</form>
 		</section>

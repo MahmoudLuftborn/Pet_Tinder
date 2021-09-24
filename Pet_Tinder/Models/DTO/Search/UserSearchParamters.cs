@@ -2,7 +2,6 @@
 {
 	public class UserSearchParamters : BaseSearchParamters
 	{
-		public string StoreId { get; set; }
 		public string loginUserId { get; set; }
 	}
 }
