@@ -18,21 +18,23 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="~/css/site.css" />
 	<style>
-		.logo img{
+		.logo img {
 			width: 80px;
 			height: auto;
 		}
 	</style>
 </head>
 <body>
-	<section class="banner" role="banner">
+	<section class="banner" role="banner" style="background-image:none;">
 		<header id="header">
-			<div class="header-content clearfix">
-				<a class="logo" href="#"><img src="~/e557494118987289843c2ce95e76f840.jpg" alt=""></a>
-				<nav class="navigation" role="navigation">
+			<div class="header-content clearfix" style=" padding: 20px 0; ">
+				<a class="logo" href="#"><img src="~/Picture1.jpg" alt=""></a>
+				<nav class="navigation" role="navigation" style=" margin-top: 40px; ">
 					<ul class="primary-nav">
+						<li><a asp-area="" asp-controller="Home" asp-action="Index"></a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Index"></a></li>
 						<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-						<li><a asp-area="" asp-controller="Home" asp-action="Privacy">Profile</a></li>
+						<li><a asp-area="" asp-controller="Profile" asp-action="Index">Profile</a></li>
 						<li>
 							<partial name="_LoginPartial" />
 						</li>
@@ -41,10 +43,10 @@
 				<a href="#" class="nav-toggle">Menu<span></span></a>
 			</div><!-- header content -->
 		</header><!-- header -->
+	</section>
 		<div class="container" style="padding-top:100px;">
 			@RenderBody()
 		</div>
-	</section>
 
 	<footer class="footer">
 		<div class="footer-top">
