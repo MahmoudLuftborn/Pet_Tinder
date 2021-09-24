@@ -25,6 +25,8 @@ namespace Pet_Tinder.Models.Domain
 
 
         #region Pet data
+        public DateTime BirthDate { get; set; }
+        public Region Region { get; set; }
         public string OwnerName { get; set; }
         public Breed Breed { get; set; }
         public PetType Type { get; set; }
